@@ -11,6 +11,7 @@ body{
     font-family: 'Montserrat', sans-serif;
     width: 90%;
     margin: auto;
+    overflow: hidden;
 }
 
 a{
@@ -25,9 +26,24 @@ li{
 
 /*header*/
 
+main{
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    perspective: 1500px;
+}
+
+.container{
+    height: 100%;
+    /* transform: translateZ(1px) rotateY(45deg) scale(0.4) translate(-50%); */
+    transition: transform .4s;
+}
+
 
 header{
     height: 70px;
+    position: relative;
+    z-index: 100;
 }
 
 .container-header{
@@ -85,11 +101,10 @@ header{
     top: 50%;
     left: 55%;
     transform: translateY(-50%);
-    
+    visibility: hidden;
 }
 
 .main-menu li{
-    position: relative;
     text-align: center;
     width: inherit;
     cursor: pointer;
@@ -113,3 +128,101 @@ header{
 .is-active::before{
     opacity: 1 !important;
 }
+
+
+/*home*/
+
+.content-home{
+    position: relative;
+}
+
+.main-content{
+    color: white;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.main-content li{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+#home h2{
+    font-size: 55px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.content-home::before{
+    position: absolute;
+    content: "";
+    border: 5px solid #0f33ff;
+    left: 166px;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    transform: rotate(170deg);
+}
+
+.content-home::after{
+    position: absolute;
+    content: "";
+    background-color: #0f33ff;
+    top: 30px;
+    left: 314px;
+    transform: rotate(45deg);
+    width: 10px;
+    height: 10px;
+}
+
+#home h2::before{
+    top: 52px;
+    left: 232px;
+    position: absolute;
+    content: "";
+    background-color: #0f33ff;
+    width:20px;
+    height:20px;
+    border-radius: 50%;
+}
+
+#home h2::after{
+    bottom: 0;
+    position: absolute;
+    content: "";
+    background-color: #0f33ff;
+    width:10px;
+    height: 10px;
+    left: 204px;
+}
+
+
+
+.content-home a{
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}
+
+.content-home svg{
+    width: 15px;
+    fill: white;
+    vertical-align: middle;
+    margin-left: 5px;
+    transition: all 0.2s;
+}
+
+.content-home a:hover svg{
+    margin-left: 10px;
+}
+
