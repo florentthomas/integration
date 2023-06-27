@@ -147,7 +147,8 @@ header {
 }
 
 .main-content,
-.content-contact {
+.content-contact,
+.content-carousel {
   color: white;
   height: 100%;
   width: 100%;
@@ -389,4 +390,70 @@ header {
   color: white;
   cursor: pointer;
   font-weight: 700;
+}
+
+/*page carousel*/
+
+.content-carousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.content-carousel h3 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 3rem;
+}
+
+.item-carousel {
+  display: none;
+}
+
+.content-text-carousel a {
+  display: block;
+  font-size: 14px;
+}
+
+.content-text-carousel :nth-child(1) {
+  margin: 1rem 0;
+  text-transform: uppercase;
+}
+
+.item-carousel-active {
+  display: block;
+}
+
+.img-carousel img {
+  width: 100%;
+}
+.img-carousel {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: auto;
+}
+
+#right-carousel,
+#left-carousel {
+  cursor: pointer;
+  position: absolute;
+  padding: 0.7rem;
+  background-color: #282828;
+  box-sizing: content-box;
+  border-radius: 50%;
+  font-size: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+#right-carousel {
+  right: 0;
+}
+
+#left-carousel {
+  left: 0;
 }
