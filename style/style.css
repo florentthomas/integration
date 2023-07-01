@@ -17,6 +17,7 @@ body {
   margin: auto;
   overflow: hidden;
   user-select: none;
+  color: white;
 }
 
 a {
@@ -149,17 +150,16 @@ header {
 .main-content,
 .content-contact,
 .content-carousel {
-  color: white;
+  height: 100%;
+}
+
+#carousel,
+#home,
+#contact {
   height: 100%;
   width: 100%;
   position: absolute;
   top: 0;
-}
-
-.main-content li {
-  position: absolute;
-  width: 100%;
-  height: 100%;
 }
 
 #home {
@@ -399,6 +399,8 @@ header {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  max-width: 900px;
+  margin: auto;
 }
 
 .content-carousel h3 {
@@ -407,8 +409,13 @@ header {
   margin-bottom: 3rem;
 }
 
-.item-carousel {
-  display: none;
+.carousel {
+  position: relative;
+}
+
+.items-carousel {
+  transition: opacity 0.8s;
+  width: 100%;
 }
 
 .content-text-carousel a {
@@ -419,6 +426,42 @@ header {
 .content-text-carousel :nth-child(1) {
   margin: 1rem 0;
   text-transform: uppercase;
+}
+
+.item-carousel {
+  display: none;
+}
+
+.item-right,
+.item-left {
+  position: absolute;
+  display: none;
+  top: 45%;
+  transform: translateY(-50%);
+}
+
+.item-left {
+  left: 65px;
+}
+
+.item-right {
+  right: 65px;
+}
+
+.item-left .img-carousel,
+.item-right .img-carousel {
+  width: 90px;
+  height: 90px;
+}
+
+.item-left .description,
+.item-right .description {
+  display: none;
+}
+
+.item-left .content-text-carousel a:first-of-type,
+.item-right .content-text-carousel a:first-of-type {
+  color: #858585;
 }
 
 .item-carousel-active {
@@ -445,8 +488,7 @@ header {
   box-sizing: content-box;
   border-radius: 50%;
   font-size: 25px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 25%;
   z-index: 3;
 }
 
@@ -456,4 +498,34 @@ header {
 
 #left-carousel {
   left: 0;
+}
+
+@media screen and (min-width: 650px) {
+  .item-right,
+  .item-left {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .item-left .img-carousel,
+  .item-right .img-carousel {
+    width: 180px;
+    height: 180px;
+  }
+
+  .item-right,
+  .item-left {
+    width: 180px;
+  }
+
+  .item-carousel-active .img-carousel {
+    width: 240px;
+    height: 240px;
+  }
+
+  #right-carousel,
+  #left-carousel {
+    top: 30%;
+  }
 }
