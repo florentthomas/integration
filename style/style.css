@@ -75,6 +75,17 @@ header {
   align-self: center;
 }
 
+.link-hire-us {
+  background-color: var(--color-blue);
+  text-transform: uppercase;
+  padding: 0 0.8rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 30px;
+  display: none;
+}
+
 .hamburger {
   height: 1rem;
   cursor: pointer;
@@ -133,39 +144,49 @@ header {
   opacity: 1 !important;
 }
 
+.main-content,
+.content-contact,
+.content-carousel {
+  height: 100%;
+  max-width: 900px;
+}
+
+#carousel,
+#home,
+#contact,
+#send-request {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.is-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 /*home*/
 
 .main-content li {
   opacity: 0;
 }
 
-.is-visible {
-  opacity: 1 !important;
-}
-
 .content-home {
   position: relative;
-}
-
-.main-content,
-.content-contact,
-.content-carousel {
-  height: 100%;
-}
-
-#carousel,
-#home,
-#contact {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-}
-
-#home {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 900px;
+  margin: auto;
+  height: 100%;
+}
+
+.content-home .link-career {
+  text-align: left;
+  width: fit-content;
 }
 
 #home h2 {
@@ -174,6 +195,7 @@ header {
   line-height: 1;
   margin-bottom: 2rem;
   position: relative;
+  text-align: left;
 }
 
 .content-home::before {
@@ -184,13 +206,14 @@ header {
   border-top-color: transparent;
   border-left-color: transparent;
   transform: rotate(170deg);
+  top: 280px;
 }
 
 .content-home::after {
   position: absolute;
   content: "";
   background-color: var(--color-blue);
-  top: 30px;
+  top: 320px;
   left: 314px;
   transform: rotate(45deg);
   width: 10px;
@@ -220,7 +243,6 @@ header {
 
 .content-home a {
   text-transform: uppercase;
-  font-size: 0.7rem;
 }
 
 .content-home svg {
@@ -233,6 +255,108 @@ header {
 
 .content-home a:hover svg {
   margin-left: 10px;
+}
+
+.img-section-home {
+  display: none;
+}
+
+.gallery-home {
+  margin-top: 4rem;
+  display: none;
+  max-width: 650px;
+  justify-content: space-between;
+  position: relative;
+  z-index: 6;
+}
+
+.img-gallery {
+  width: 170px;
+  height: 90px;
+  border: 10px solid var(--color-blue);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.item-gallery span {
+  z-index: 6;
+  text-transform: uppercase;
+  position: relative;
+  left: 20px;
+  top: -10px;
+  transition: top 0.3s;
+}
+
+.item-gallery:hover span {
+  top: 3px;
+}
+
+.item-gallery:nth-child(1) .img-gallery {
+  background-image: url("../images/about-winners.jpg");
+}
+.item-gallery:nth-child(2) .img-gallery {
+  background-image: url("../images/about-philosophy.jpg");
+}
+.item-gallery:nth-child(3) .img-gallery {
+  background-image: url("../images/about-history.jpg");
+}
+
+@media screen and (min-width: 600px) {
+  .img-section-home {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 120px;
+    width: 280px;
+    height: auto;
+    z-index: 5;
+  }
+
+  .gallery-home {
+    display: flex;
+  }
+
+  .content-home::before {
+    top: 185px;
+  }
+
+  .content-home::after {
+    top: 230px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .img-section-home {
+    width: 350px;
+  }
+  #home h2 {
+    font-size: 70px;
+  }
+
+  .content-home::before {
+    left: 205px;
+    top: 145px;
+  }
+
+  .content-home::after {
+    left: 405px;
+  }
+
+  #home h2::before {
+    top: 61px;
+    left: 293px;
+    width: 30px;
+    height: 30px;
+  }
+
+  #home h2::after {
+    left: 260px;
+  }
+
+  .link-hire-us {
+    display: block;
+  }
 }
 
 /*Page contact*/
