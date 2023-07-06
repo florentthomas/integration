@@ -14,6 +14,7 @@ body {
   background-color: #0c0c0c;
   font-family: "Montserrat", sans-serif;
   width: 90%;
+  max-width: 1300px;
   margin: auto;
   overflow: hidden;
   user-select: none;
@@ -33,7 +34,6 @@ li {
 
 main {
   height: 100vh;
-  overflow: hidden;
   position: relative;
   perspective: 1500px;
 }
@@ -142,6 +142,115 @@ header {
 
 .is-active::before {
   opacity: 1 !important;
+}
+
+/*side list*/
+
+@media screen and (min-width: 1150px) {
+  main::before {
+    display: block !important;
+  }
+  .side-list {
+    display: flex !important;
+  }
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 70%;
+  background-color: #252525;
+  transform: translateY(-50%);
+}
+
+.side-list {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  flex-direction: column;
+  height: 60%;
+  justify-content: space-between;
+  z-index: 10;
+  font-size: 13px;
+}
+
+.side-list span {
+  opacity: 0;
+  width: 0px;
+  display: block;
+  transition: opacity 0.3s;
+  position: absolute;
+  left: 15px;
+  top: 3px;
+}
+
+.side-list li {
+  cursor: pointer;
+  position: relative;
+}
+
+.side-list li::before {
+  font-size: 8px;
+}
+
+.side-list li:nth-child(1)::before {
+  content: ".";
+}
+
+.side-list li:nth-child(2)::before {
+  content: ".";
+}
+
+.side-list li:nth-child(3)::before {
+  content: ".";
+}
+
+.side-list li:nth-child(4)::before {
+  content: ".";
+}
+
+.side-list li::after {
+  color: #252525;
+  position: absolute;
+  left: 10px;
+  top: 4px;
+}
+
+.side-list li:nth-child(1)::after {
+  content: "01";
+}
+
+.side-list li:nth-child(2)::after {
+  content: "02";
+}
+
+.side-list li:nth-child(3)::after {
+  content: "03";
+}
+
+.side-list li:nth-child(4)::after {
+  content: "04";
+}
+
+.side-list li.side-list-is-active span {
+  width: auto;
+  opacity: 1;
+}
+
+.side-list li.side-list-is-active::before {
+  color: var(--color-blue);
+}
+
+.side-list li.side-list-is-active::after {
+  color: white;
+  position: absolute;
+  margin: 0;
+  left: -25px;
 }
 
 .main-content,
