@@ -165,6 +165,7 @@ main::before {
   height: 70%;
   background-color: #252525;
   transform: translateY(-50%);
+  z-index: 150;
 }
 
 .side-list {
@@ -257,7 +258,6 @@ main::before {
 .content-contact,
 .content-carousel {
   height: 100%;
-  max-width: 900px;
 }
 
 #carousel,
@@ -477,12 +477,17 @@ main::before {
   background-image: url("../images/contact-visual.png");
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .card-contact {
   padding: 2.5rem;
   background-color: #0c0c0c;
-  margin: auto;
+  font-size: 13px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 15px 15px 15px black;
 }
 
 .card-contact p {
@@ -508,6 +513,14 @@ main::before {
 
 .link-contact a:nth-child(3) {
   background-color: var(--color-blue);
+}
+
+@media screen and (min-width: 780px) {
+  .card-contact {
+    left: auto;
+    right: 20%;
+    transform: translateX(0);
+  }
 }
 
 /*page send request*/
