@@ -524,6 +524,10 @@ main::before {
 }
 
 /*page send request*/
+.content-send-request {
+  max-width: 900px;
+  margin: auto;
+}
 
 #send-request {
   display: flex;
@@ -540,7 +544,8 @@ main::before {
 .container-checkbox {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .container-checkbox div {
@@ -561,6 +566,38 @@ main::before {
   font-size: 13px;
   width: 150px;
   line-height: 50px;
+}
+
+@media screen and (min-width: 500px) {
+  .container-checkbox label {
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .container-checkbox {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .container-checkbox div {
+    flex-direction: row;
+  }
+
+  .container-checkbox div:nth-child(2) {
+    width: 70%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+  }
+
+  .container-checkbox label {
+    margin-right: 2rem;
+  }
+
+  .container-checkbox label:last-child {
+    margin-right: 0;
+  }
 }
 
 .container-checkbox label svg {
@@ -636,6 +673,11 @@ main::before {
   color: white;
   cursor: pointer;
   font-weight: 700;
+}
+
+#send-request .input-group:last-child {
+  max-width: 400px;
+  margin: auto;
 }
 
 /*page carousel*/
