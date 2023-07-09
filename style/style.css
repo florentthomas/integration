@@ -261,9 +261,10 @@ main::before {
 }
 
 #carousel,
-#home,
+#about,
 #contact,
-#send-request {
+#send-request,
+#home {
   height: 100%;
   width: 100%;
   position: absolute;
@@ -279,11 +280,167 @@ main::before {
 
 /*home*/
 
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content-home {
+  max-width: 900px;
+  position: relative;
+  margin: auto;
+  width: 100%;
+}
+
+#home h2 {
+  font-size: 55px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.img-astronaut {
+  display: none;
+}
+
+.container-link-hire-us {
+  position: relative;
+  margin-top: 2rem;
+  width: fit-content;
+}
+
+.link-hire-us-section-home {
+  text-transform: uppercase;
+  font-size: 14px;
+  left: 15px;
+  position: relative;
+  z-index: 5;
+}
+
+.container-link-hire-us::after {
+  cursor: pointer;
+  content: "";
+  width: 80px;
+  height: 30px;
+  background-color: var(--color-blue);
+  position: absolute;
+  z-index: 4;
+  left: 30px;
+  top: -5px;
+  transition: all 0.5s;
+}
+
+.container-link-hire-us svg {
+  cursor: pointer;
+  width: 15px;
+  position: relative;
+  z-index: 6;
+  left: 20px;
+}
+
+.container-link-hire-us:hover::after {
+  left: 0;
+  width: 110px;
+}
+
+.line {
+  position: relative;
+  left: -12px;
+  right: 0;
+  height: 2px;
+  background-color: #282828;
+  margin-top: 4rem;
+}
+
+.line-blue {
+  position: absolute;
+  left: 12px;
+  top: 0;
+  height: 4px;
+  width: 30px;
+  background-color: var(--color-blue);
+}
+
+.content-text-home {
+  margin-top: 2rem;
+}
+
+.content-text-home span {
+  text-transform: uppercase;
+}
+
+.content-text-home p {
+  margin-top: 1rem;
+}
+
+.content-text-home {
+  color: #282828;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.description-home:hover {
+  color: white;
+}
+
+.description-home a {
+  display: block;
+  transition: color 0.5s;
+}
+
+@media screen and (min-width: 600px) {
+  .img-astronaut {
+    display: block;
+    width: 300px;
+    height: auto;
+    position: absolute;
+    top: -22px;
+    right: 15px;
+  }
+
+  #home h2 {
+    font-size: 44px;
+  }
+}
+
+@media screen and (min-width: 770px) {
+  .img-astronaut {
+    width: 400px;
+    top: -95px;
+  }
+
+  #home h2 {
+    font-size: 50px;
+  }
+
+  .content-text-home {
+    flex-direction: row;
+  }
+
+  .description-home p {
+    line-height: 1.2;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .img-astronaut {
+    width: 420px;
+    top: -70px;
+  }
+
+  #home h2 {
+    font-size: 65px;
+  }
+}
+/*about*/
+
 .main-content li {
   opacity: 0;
 }
 
-.content-home {
+.content-about {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -293,12 +450,12 @@ main::before {
   height: 100%;
 }
 
-.content-home .link-career {
+.content-about .link-career {
   text-align: left;
   width: fit-content;
 }
 
-#home h2 {
+#about h2 {
   font-size: 55px;
   font-weight: 900;
   line-height: 1;
@@ -307,7 +464,7 @@ main::before {
   text-align: left;
 }
 
-.content-home::before {
+.content-about::before {
   position: absolute;
   content: "";
   border: 5px solid var(--color-blue);
@@ -318,7 +475,7 @@ main::before {
   top: 280px;
 }
 
-.content-home::after {
+.content-about::after {
   position: absolute;
   content: "";
   background-color: var(--color-blue);
@@ -329,7 +486,7 @@ main::before {
   height: 10px;
 }
 
-#home h2::before {
+#about h2::before {
   top: 52px;
   left: 232px;
   position: absolute;
@@ -340,7 +497,7 @@ main::before {
   border-radius: 50%;
 }
 
-#home h2::after {
+#about h2::after {
   bottom: 0;
   position: absolute;
   content: "";
@@ -350,11 +507,11 @@ main::before {
   left: 204px;
 }
 
-.content-home a {
+.content-about a {
   text-transform: uppercase;
 }
 
-.content-home svg {
+.content-about svg {
   width: 15px;
   fill: white;
   vertical-align: middle;
@@ -362,15 +519,15 @@ main::before {
   transition: all 0.2s;
 }
 
-.content-home a:hover svg {
+.content-about a:hover svg {
   margin-left: 10px;
 }
 
-.img-section-home {
+.img-section-about {
   display: none;
 }
 
-.gallery-home {
+.gallery-about {
   margin-top: 4rem;
   display: none;
   max-width: 650px;
@@ -412,7 +569,7 @@ main::before {
 }
 
 @media screen and (min-width: 600px) {
-  .img-section-home {
+  .img-section-about {
     display: block;
     position: absolute;
     right: 0;
@@ -422,44 +579,44 @@ main::before {
     z-index: 5;
   }
 
-  .gallery-home {
+  .gallery-about {
     display: flex;
   }
 
-  .content-home::before {
+  .content-about::before {
     top: 185px;
   }
 
-  .content-home::after {
+  .content-about::after {
     top: 230px;
   }
 }
 
 @media screen and (min-width: 800px) {
-  .img-section-home {
+  .img-section-about {
     width: 350px;
   }
-  #home h2 {
+  #about h2 {
     font-size: 70px;
   }
 
-  .content-home::before {
+  .content-about::before {
     left: 205px;
     top: 145px;
   }
 
-  .content-home::after {
+  .content-about::after {
     left: 405px;
   }
 
-  #home h2::before {
+  #about h2::before {
     top: 61px;
     left: 293px;
     width: 30px;
     height: 30px;
   }
 
-  #home h2::after {
+  #about h2::after {
     left: 260px;
   }
 
