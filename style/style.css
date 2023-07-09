@@ -147,7 +147,7 @@ header {
 /*side list*/
 
 @media screen and (min-width: 1150px) {
-  main::before {
+  .side-list::before {
     display: block !important;
   }
   .side-list {
@@ -155,14 +155,14 @@ header {
   }
 }
 
-main::before {
+.side-list::before {
   content: "";
   position: absolute;
   display: none;
   left: 0;
   top: 50%;
   width: 1px;
-  height: 70%;
+  height: 120%;
   background-color: #252525;
   transform: translateY(-50%);
   z-index: 150;
@@ -215,6 +215,10 @@ main::before {
   content: ".";
 }
 
+.side-list li:nth-child(5)::before {
+  content: ".";
+}
+
 .side-list li::after {
   color: #252525;
   position: absolute;
@@ -236,6 +240,10 @@ main::before {
 
 .side-list li:nth-child(4)::after {
   content: "04";
+}
+
+.side-list li:nth-child(5)::after {
+  content: "05";
 }
 
 .side-list li.side-list-is-active span {
