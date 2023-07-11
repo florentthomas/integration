@@ -30,8 +30,11 @@ document.addEventListener("wheel", function (event) {
 
   if (delta > 0) {
     next_li.classList.add("side-list-is-active");
+
+    select_menu_section(next_li.textContent.toLowerCase());
   } else {
     previous_li.classList.add("side-list-is-active");
+    select_menu_section(previous_li.textContent.toLowerCase());
   }
 
   scroll_allowed = false;

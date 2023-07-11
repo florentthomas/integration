@@ -267,14 +267,14 @@ header {
 
 .main-content,
 .content-contact,
-.content-carousel {
+.content-works {
   height: 100%;
 }
 
-#carousel,
+#works,
 #about,
 #contact,
-#send-request,
+#hire-us,
 #home {
   height: 100%;
   width: 100%;
@@ -282,6 +282,7 @@ header {
   top: 0;
   opacity: 0;
   visibility: hidden;
+  transition: all 0.5s;
 }
 
 .is-visible {
@@ -691,19 +692,19 @@ header {
   }
 }
 
-/*page send request*/
-.content-send-request {
+/*page hire-us*/
+.content-hire-us {
   max-width: 900px;
   margin: auto;
 }
 
-#send-request {
+#hire-us {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-#send-request h3 {
+#hire-us h3 {
   font-size: 30px;
   text-align: center;
   margin-bottom: 2rem;
@@ -831,7 +832,7 @@ header {
   font-size: 15px;
 }
 
-#send-request input[type="submit"] {
+#hire-us input[type="submit"] {
   margin-top: 2rem;
   width: 100%;
   padding: 1rem 0;
@@ -843,14 +844,14 @@ header {
   font-weight: 700;
 }
 
-#send-request .input-group:last-child {
+#hire-us .input-group:last-child {
   max-width: 400px;
   margin: auto;
 }
 
-/*page carousel*/
+/*page works*/
 
-.content-carousel {
+.content-works {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -859,7 +860,7 @@ header {
   margin: auto;
 }
 
-.content-carousel h3 {
+.content-works h3 {
   text-align: center;
   font-size: 30px;
   margin-bottom: 3rem;
