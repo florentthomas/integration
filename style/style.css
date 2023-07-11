@@ -184,10 +184,13 @@ header {
   opacity: 0;
   width: 0px;
   display: block;
-  transition: opacity 0.3s;
   position: absolute;
   left: 15px;
   top: 3px;
+}
+
+.side-list > li.side-list-is-active span {
+  transition: opacity 1s;
 }
 
 .side-list li {
@@ -247,7 +250,7 @@ header {
 }
 
 .side-list li.side-list-is-active span {
-  width: auto;
+  width: max-content;
   opacity: 1;
 }
 
