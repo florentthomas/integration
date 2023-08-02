@@ -1,34 +1,14 @@
-function select_menu_section(name_section) {
-  let section = null;
-
-  switch (name_section) {
-    case "home":
-      section = "home";
-      break;
-    case "about":
-      section = "about";
-      break;
-    case "contact":
-      section = "contact";
-      break;
-    case "hire us":
-      section = "hire-us";
-      break;
-    case "works":
-      section = "works";
+function select_menu_section(next_section, li_elts_section) {
+  if (next_section == null) {
+    return;
   }
-
-  const li_elts = document.querySelectorAll(".main-content li");
-
-  li_elts.forEach((li_elt) => {
+  li_elts_section.forEach((li_elt) => {
     if (li_elt.classList.contains("is-visible")) {
       li_elt.classList.remove("is-visible");
     }
-
-    if (li_elt.id == section) {
-      setTimeout(function () {
-        li_elt.classList.add("is-visible");
-      }, 600);
-    }
   });
+
+  setTimeout(function () {
+    next_section.classList.add("is-visible");
+  }, 600);
 }
