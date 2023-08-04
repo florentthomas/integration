@@ -13,9 +13,9 @@
 body {
   background-color: #0c0c0c;
   font-family: "Montserrat", sans-serif;
-  width: 90%;
-  max-width: 1300px;
+  /* max-width: 1300px; */
   margin: auto;
+  /* width: 90%; */
   overflow: hidden;
   user-select: none;
   color: white;
@@ -34,14 +34,42 @@ li {
 
 main {
   height: 100vh;
+  width: 100%;
   position: relative;
   perspective: 1500px;
 }
 
 .container {
   height: 100%;
-  /* transform: translateZ(1px) rotateY(45deg) scale(0.4) translate(-50%); */
   transition: transform 0.4s;
+}
+
+.container-shrink {
+  transform: translateZ(1px) rotateY(45deg) scale(0.4) translate(-50%);
+  outline: #0f33ff 20px solid;
+}
+.content-header {
+  width: 1300px;
+  max-width: 90%;
+  margin: auto;
+  height: 100%;
+}
+
+@media screen and (max-width: 900px) {
+  .content-header {
+    position: relative;
+  }
+}
+
+.return-to-main {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+  box-shadow: 2px 2px 12px 6px #000000;
 }
 
 header {
@@ -111,20 +139,54 @@ header {
 
 .main-menu {
   color: white;
-  font-size: 25px;
+  font-size: 55px;
   font-weight: 900;
   position: absolute;
   top: 50%;
   left: 55%;
   transform: translateY(-50%);
   visibility: hidden;
+  transition: visibility 0.1s;
 }
 
 .main-menu li {
   text-align: center;
   width: inherit;
   cursor: pointer;
-  line-height: 54px;
+  line-height: 80px;
+  opacity: 0;
+  transform: scale(0.8) translate(150px, 0);
+}
+
+.main-menu-active > li {
+  opacity: 1;
+  transform: scale(1) translate(0, 0);
+  transition: transform 0.4s, opacity 0.4s;
+}
+
+.main-menu-active li:nth-child(1) {
+  transition-delay: 0.15s;
+}
+
+.main-menu-active li:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.main-menu-active li:nth-child(3) {
+  transition-delay: 0.25s;
+}
+.main-menu-active li:nth-child(4) {
+  transition-delay: 0.3s;
+}
+.main-menu-active li:nth-child(5) {
+  transition-delay: 0.35s;
+}
+
+.main-menu-active > li {
+  transform: translateX(0);
+}
+
+.main-menu-active {
+  visibility: visible;
 }
 
 .main-menu li::before {
@@ -280,6 +342,7 @@ header {
   width: 100%;
   position: absolute;
   top: 0;
+  left: 0;
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s;
