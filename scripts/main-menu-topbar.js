@@ -22,5 +22,6 @@ main_menu_li_elts.forEach((li_elt) => {
     select_menu_section(next_section, li_elts_section);
     link_active_side_nav(next_section, li_elts_side_nav);
     link_active_main_menu(next_section, main_menu_li_elts);
+    show_link_hire_us(next_section, link_hire_us);
   });
 });
