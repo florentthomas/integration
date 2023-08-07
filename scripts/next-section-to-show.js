@@ -40,6 +40,7 @@ function get_next_section_to_show(
       }
     }
   } else if (event.type == "click") {
+    //When clicking on menu links
     li_elts_section.forEach((li_elt) => {
       if (li_elt.id == event.currentTarget.getAttribute("data-section")) {
         next_section = li_elt;

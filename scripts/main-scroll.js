@@ -1,5 +1,7 @@
 const li_elts_section = document.querySelectorAll(".main-content li");
 const li_elts_side_nav = document.querySelectorAll("#side-list li");
+const main_menu_li_elts = document.querySelectorAll(".main-menu li");
+
 let next_section = null;
 let scroll_allowed = true;
 
@@ -8,7 +10,8 @@ li_elts_side_nav.forEach((li_elt_side_nav) => {
     next_section = get_next_section_to_show(event, li_elts_section);
     scroll_effect(next_section, li_elts_section);
     select_menu_section(next_section, li_elts_section);
-    scroll_side_nav(event, li_elts_side_nav);
+    link_active_side_nav(next_section, li_elts_side_nav);
+    link_active_main_menu(next_section, main_menu_li_elts);
   });
 });
 
@@ -21,7 +24,8 @@ document.addEventListener("wheel", (event) => {
   next_section = get_next_section_to_show(event, li_elts_section);
   scroll_effect(next_section, li_elts_section);
   select_menu_section(next_section, li_elts_section);
-  scroll_side_nav(event, li_elts_side_nav);
+  link_active_side_nav(next_section, li_elts_side_nav);
+  link_active_main_menu(next_section, main_menu_li_elts);
 
   setTimeout(function () {
     scroll_allowed = true;
@@ -56,7 +60,8 @@ document.addEventListener("touchend", (event) => {
     );
     scroll_effect(next_section, li_elts_section, pos_touchstart_Y);
     select_menu_section(next_section, li_elts_section);
-    scroll_side_nav(event, li_elts_side_nav, pos_touchstart_Y);
+    link_active_side_nav(next_section, li_elts_side_nav);
+    link_active_main_menu(next_section, main_menu_li_elts);
 
     setTimeout(function () {
       scroll_allowed = true;

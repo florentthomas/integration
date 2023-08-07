@@ -12,9 +12,10 @@
     <link rel="stylesheet" href="style/style.css" />
     <script defer src="scripts/carousel.js"></script>
     <script defer src="scripts/select-section-menu.js"></script>
-    <script defer src="scripts/scroll-menu.js"></script>
+    <script defer src="scripts/link-active-side-nav.js"></script>
     <script defer src="scripts/scroll-effect.js"></script>
-    <script defer src="scripts/next_section_to_show.js"></script>
+    <script defer src="scripts/next-section-to-show.js"></script>
+    <script defer src="scripts/link-active-main-menu.js"></script>
     <script defer src="scripts/main-scroll.js"></script>
     <script defer src="scripts/main-menu-topbar.js"></script>
 
@@ -22,8 +23,8 @@
   </head>
   <body>
     <main>
-      <div class="container">
-        <div class="return-to-main"></div>
+      <div class="container" id="container">
+        <div class="return-to-main" id="return-to-main"></div>
 
         <div class="content-header">
           <header>
@@ -471,7 +472,7 @@
       </div>
     </main>
 
-    <ul class="main-menu">
+    <ul class="main-menu" id="main-menu">
       <li class="is-active" data-section="home">Home</li>
       <li data-section="works">Works</li>
       <li data-section="about">About</li>

@@ -72,6 +72,10 @@ main {
   box-shadow: 2px 2px 12px 6px #000000;
 }
 
+.container.container-shrink .return-to-main {
+  display: block;
+}
+
 header {
   height: 70px;
   position: relative;
