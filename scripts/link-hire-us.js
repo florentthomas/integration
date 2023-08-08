@@ -1,5 +1,5 @@
 function show_link_hire_us(next_section, link_elt) {
-  if (typeof next_section !== "undefined" || next_section !== null) {
+  if (typeof next_section !== "undefined" && next_section !== null) {
     const next_section_id = next_section.id;
 
     if (
