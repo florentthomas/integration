@@ -196,6 +196,21 @@ header {
   transition: visibility 0.1s;
 }
 
+@media screen and (max-width: 360px) {
+  .main-menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .main-menu {
+    font-size: 30px;
+  }
+  .main-menu li {
+    line-height: 50px !important;
+  }
+}
+
 .main-menu li {
   text-align: center;
   width: inherit;
