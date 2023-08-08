@@ -161,6 +161,12 @@ header {
   transition: all 0.5s;
 }
 
+@media screen and (max-width: 770px) {
+  .link-hire-us {
+    display: none;
+  }
+}
+
 .hamburger {
   height: 1rem;
   cursor: pointer;
@@ -756,10 +762,6 @@ header {
   #about h2::after {
     left: 260px;
   }
-
-  /* .link-hire-us {
-    display: block;
-  } */
 }
 
 /*Page contact*/

@@ -2,6 +2,9 @@ const li_elts_section = document.querySelectorAll(".main-content li");
 const li_elts_side_nav = document.querySelectorAll("#side-list li");
 const main_menu_li_elts = document.querySelectorAll(".main-menu li");
 const link_hire_us = document.getElementById("link-hire-us");
+const link_hire_us_home = document.getElementsByClassName(
+  "container-link-hire-us"
+);
 
 let next_section = null;
 let scroll_allowed = true;
@@ -74,6 +77,15 @@ document.addEventListener("touchend", (event) => {
 });
 
 link_hire_us.addEventListener("click", function (e) {
+  e.preventDefault();
+  const hire_us_section = document.getElementById("hire-us");
+  select_menu_section(hire_us_section, li_elts_section);
+  link_active_side_nav(hire_us_section, li_elts_side_nav);
+  link_active_main_menu(hire_us_section, main_menu_li_elts);
+  show_link_hire_us(hire_us_section, link_hire_us);
+});
+
+link_hire_us_home[0].addEventListener("click", function (e) {
   e.preventDefault();
   const hire_us_section = document.getElementById("hire-us");
   select_menu_section(hire_us_section, li_elts_section);
