@@ -10,15 +10,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style/style.css" />
-    <script defer src="scripts/carousel.js"></script>
-    <script defer src="scripts/select-section-menu.js"></script>
-    <script defer src="scripts/link-active-side-nav.js"></script>
-    <script defer src="scripts/scroll-effect.js"></script>
-    <script defer src="scripts/next-section-to-show.js"></script>
-    <script defer src="scripts/link-active-main-menu.js"></script>
-    <script defer src="scripts/link-hire-us.js"></script>
-    <script defer src="scripts/main-scroll.js"></script>
-    <script defer src="scripts/main-menu-topbar.js"></script>
+    <script type="module" src="scripts/modules/change-section.js"></script>
+    <script type="module" src="scripts/modules/slider.js"></script>
+    <script type="module" src="scripts/modules/main-menu.js"></script>
 
     <title>GLOBAL</title>
   </head>
@@ -81,7 +75,7 @@
                   alt="astronaut"
                 />
 
-                <div class="container-link-hire-us">
+                <div class="container-link-hire-us" id="container-link-hire-us">
                   <a href="" class="link-hire-us-section-home">hire us</a>
                   <svg
                     version="1.1"

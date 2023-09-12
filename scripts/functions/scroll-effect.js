@@ -1,3 +1,11 @@
+/**
+ * Apply an effect on scroll
+ *
+ * @param {HTMLLIElement} next_section - next section to show
+ * @param {HTMLCollection} li_elts_section - list of li elements of main content
+ * @returns {void}
+ */
+
 function scroll_effect(next_section, li_elts_section) {
   if (typeof next_section !== "undefined" && next_section !== null) {
     if (next_section == null) {
@@ -40,3 +48,5 @@ function scroll_effect(next_section, li_elts_section) {
     return;
   }
 }
+
+export {scroll_effect};

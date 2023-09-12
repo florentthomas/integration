@@ -1,9 +1,7 @@
-const arrow_left_elt = document.getElementById("left-carousel");
-const arrow_right_elt = document.getElementById("right-carousel");
 const items_carousel = document.querySelectorAll("#works .item-carousel");
 const container_carousel = document.querySelector(".items-carousel");
 
-function slider(e) {
+function slider() {
   let index_current_item = null;
 
   items_carousel.forEach((item, index) => {
@@ -53,5 +51,4 @@ function slider(e) {
   );
 }
 
-arrow_left_elt.addEventListener("click", slider);
-arrow_right_elt.addEventListener("click", slider);
+export {slider};

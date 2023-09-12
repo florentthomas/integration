@@ -1,3 +1,12 @@
+/**
+ *
+ *
+ * @param {Event} event
+ * @param {HTMLCollection} li_elts_section - List of li elements of main content
+ * @param {Number} pos_touchstart_y - Finger start position when scrolling
+ * @returns {HTMLLIElement}
+ */
+
 function get_next_section_to_show(
   event,
   li_elts_section,
@@ -40,7 +49,7 @@ function get_next_section_to_show(
       }
     }
   } else if (event.type == "click") {
-    //When clicking on menu links
+    //When clicking on menus links
     li_elts_section.forEach((li_elt) => {
       if (li_elt.id == event.currentTarget.getAttribute("data-section")) {
         next_section = li_elt;
@@ -54,3 +63,5 @@ function get_next_section_to_show(
 
   return next_section;
 }
+
+export {get_next_section_to_show};

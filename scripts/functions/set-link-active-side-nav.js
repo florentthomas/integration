@@ -1,4 +1,12 @@
-function link_active_side_nav(next_section, li_elts_side_nav) {
+/**
+ * Set and remove class active on li element of side nav
+ *
+ * @param {HTMLLIElement} next_section - next section to show
+ * @param {*} li_elts_side_nav - list of li elements of side nav
+ * @returns {void}
+ */
+
+function set_link_active_side_nav(next_section, li_elts_side_nav) {
   if (typeof next_section !== "undefined" && next_section !== null) {
     const next_section_id = next_section.id;
 
@@ -14,3 +22,5 @@ function link_active_side_nav(next_section, li_elts_side_nav) {
     return;
   }
 }
+
+export {set_link_active_side_nav};

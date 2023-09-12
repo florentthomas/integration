@@ -1,4 +1,11 @@
-function link_active_main_menu(next_section, main_menu_li_elts) {
+/**
+ * Set and remove class active on li element of main nav
+ *
+ * @param {HTMLLIElement} next_section - next section to show
+ * @param {HTMLCollection} main_menu_li_elts - List of li elements of main nav
+ * @returns {void}
+ */
+function set_link_active_main_menu(next_section, main_menu_li_elts) {
   if (typeof next_section !== "undefined" && next_section !== null) {
     const next_section_id = next_section.id;
 
@@ -15,3 +22,5 @@ function link_active_main_menu(next_section, main_menu_li_elts) {
     return;
   }
 }
+
+export {set_link_active_main_menu};
